@@ -1,17 +1,5 @@
 <template>
 
-    <ul class="news__list">
-
-        <li v-for="article in articles" class="news__item">
-            
-            <img :src="article.urlToImage" class = "img"/>
-            {{ article.title }}
-            {{article.description}} 
-
-        </li>
-
-    </ul>
-
     <form @submit.prevent="searchNews" class="d-flex flex-column justify-content-center">
 
         <div class="input-group mx-sm-3 mb-2">
@@ -25,6 +13,18 @@
         <p>You are searching for {{ searchTerm }}</p>
         
     </form>
+    
+    <ul class="news__list">
+
+        <li v-for="article in articles" class="news__item">
+            
+            <img :src="article.urlToImage" class = "img"/>
+            {{ article.title }},
+            {{article.description}} 
+
+        </li>
+
+    </ul>
     
 </template>
 
@@ -76,4 +76,4 @@ export default {
 //         });
 //     }
 // };
-</script>
+// </script>
