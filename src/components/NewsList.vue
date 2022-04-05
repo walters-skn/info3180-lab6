@@ -13,7 +13,7 @@
         <p>You are searching for {{ searchTerm }}</p>
         
     </form>
-    
+
     <ul class="news__list">
 
         <li v-for="article in articles" class="news__item">
@@ -40,7 +40,7 @@ export default {
     methods: {
         searchNews() {
             let self =this;
-            fetch('https://newsapi.org/v2/everything?q=' + self.searchItem + '&language=en', {
+            fetch('https://newsapi.org/v2/everything?q=' + self.searchTerm + '&language=en', {
                 headers:{
                     'Authorization': `Bearer ${import.meta.env.VITE_NEWSAPI_TOKEN}`,
                 }
